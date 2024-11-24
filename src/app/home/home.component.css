@@ -1,0 +1,332 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap');
+
+/* Reset padding and margin */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Hero Section */
+.hero-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('/assets/hero-bg.jpg') no-repeat center center/cover;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-shape {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    height: auto;
+}
+
+.hero-banner-bg {
+  position: absolute;
+  right: 0%;
+   /* Changed from 10% to 5% to move the image up */
+  width: 55%;
+  height: auto;
+}
+
+
+.burger-img {
+    position: absolute;
+    right: 10%;
+    bottom: 0%;
+    width: 37%;
+    height: auto;
+}
+
+/* Hero Text */
+.hero-text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+}
+
+.hero-text h2 {
+    font-family: 'Shadows Into Light', cursive;
+    color: #f39c12;
+    font-size: 2rem;
+}
+
+.hero-text h1 {
+  font-size: 4rem; /* Increased size for a bolder look */
+  font-weight: 800; /* Heavier weight for more emphasis */
+  line-height: 1.2; /* Adjusted for spacing between lines */
+  margin: 20px 0; /* Increased margin for better spacing */
+  text-align: left; /* Aligned left to match expected design */
+}
+
+.hero-text p {
+  font-size: 1.4rem; /* Slightly increased for readability */
+  margin-bottom: 30px; /* More space below for better separation */
+  color: #EED8C4; /* Adjusted color to match the expected design */
+  max-width: 40ch; /* Limited width for consistent line length */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Navbar Styling Fix */
+.navbar {
+    padding: 20px;
+    background-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Famous Dishes Section */
+.famous-dishes {
+  padding: 60px 20px;
+  background-color: #fafafa;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Shadows Into Light', cursive;
+  color: #f39c12;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.dish-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.dish-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 22%;
+  text-align: center;
+}
+
+.dish-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.dish-card h3 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+  color: #FF7F50;
+  margin: 15px 0;
+}
+
+.dish-card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #666;
+}
+
+
+
+
+/* Customer Reviews Section */
+.customer-reviews {
+  padding: 60px 20px;
+  background-color: #faf5ee;
+  text-align: center;
+}
+
+.section-title {
+  font-family: 'Shadows Into Light', cursive;
+  color: #f39c12;
+  font-size: 2.5rem;
+ 
+  margin-bottom: 20px;
+}
+
+.section-title span {
+  color: #ff7f50; /* Dark Orange */
+}
+
+.section-description {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.reviews-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.review-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  text-align: left;
+}
+
+.review-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.review-card h3 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.review-position {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.review-card p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.review-rating {
+  font-size: 1.2rem;
+  color: #ff7f50; /* Dark Orange */
+  margin-top: 10px;
+}
+
+
+
+/* Featured Dishes Section */
+.featured-dishes {
+  padding: 60px 20px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+.featured-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.featured-image {
+  position: relative;
+  width: 45%;
+}
+
+.featured-burger {
+  width: 70%;
+  height: auto;
+  position: relative;
+  left: 10%;
+}
+
+.offer-tag {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  background-color: #ff4c4c;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.offer-tag span {
+  display: block;
+  font-size: 0.8rem;
+}
+
+.offer-tag h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.featured-content {
+  width: 45%;
+}
+
+.featured-content h2 {
+  font-family: 'Rubik', sans-serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.featured-content h2 span {
+  color: #ff7f50; /* Dark Orange */
+}
+
+.featured-content p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.featured-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.featured-list li {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.btn-order {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  background-color: #ff7f50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-order:hover {
+  background-color: #e65c3a;
+}
