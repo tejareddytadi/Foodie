@@ -1,0 +1,188 @@
+<section class="cart-section">
+  <h2 class="section-title">Your Cart</h2>
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <div class="cart-item" *ngFor="let item of cartItems; let i = index">
+      <img [src]="item.imageUrl" [alt]="item.name" class="item-img" />
+      <div class="item-details">
+        <h3>{{ item.name }}</h3>
+        <p>Quantity: 1</p>
+        <p class="price">Price: ₹{{ item.price }}</p>
+      </div>
+      <button class="btn-remove" (click)="removeFromCart(i)">Remove</button>
+    </div>
+    <div class="total-price">
+      <h3>Total Price: ₹{{ totalPrice.toFixed(2) }}</h3>
+    </div>
+
+    <!-- Delivery Details Form -->
+    <div class="delivery-details">
+      <h2 class="section-title">Delivery Details</h2>
+      <form [formGroup]="deliveryForm" class="delivery-form">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email">Email ID</label>
+          <input
+            type="email"
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email ID"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('email')?.invalid &&
+              deliveryForm.get('email')?.touched
+            "
+          >
+            Valid email is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="address-line-1">Address Line 1</label>
+          <input
+            type="text"
+            id="address-line-1"
+            formControlName="addressLine1"
+            placeholder="Enter your address line 1"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('addressLine1')?.invalid &&
+              deliveryForm.get('addressLine1')?.touched
+            "
+          >
+            Address Line 1 is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="address-line-2">Address Line 2</label>
+          <input
+            type="text"
+            id="address-line-2"
+            formControlName="addressLine2"
+            placeholder="Enter your address line 2"
+          />
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            id="city"
+            formControlName="city"
+            placeholder="Enter your city"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('city')?.invalid &&
+              deliveryForm.get('city')?.touched
+            "
+          >
+            City is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="state">State</label>
+          <input
+            type="text"
+            id="state"
+            formControlName="state"
+            placeholder="Enter your state"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('state')?.invalid &&
+              deliveryForm.get('state')?.touched
+            "
+          >
+            State is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode</label>
+          <input
+            type="text"
+            id="pincode"
+            formControlName="pincode"
+            placeholder="Enter your pincode"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('pincode')?.invalid &&
+              deliveryForm.get('pincode')?.touched
+            "
+          >
+            Pincode must be 6 digits.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="text"
+            id="phone"
+            formControlName="phone"
+            placeholder="Enter your phone number"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('phone')?.invalid &&
+              deliveryForm.get('phone')?.touched
+            "
+          >
+            Phone number must be 10 digits.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="alt-phone">Alternate Phone Number (Optional)</label>
+          <input
+            type="text"
+            id="alt-phone"
+            formControlName="alternatePhone"
+            placeholder="Enter alternate phone number"
+          />
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input
+            type="text"
+            id="country"
+            formControlName="country"
+            placeholder="Enter your country"
+          />
+          <small
+            *ngIf="
+              deliveryForm.get('country')?.invalid &&
+              deliveryForm.get('country')?.touched
+            "
+          >
+            Country is required.
+          </small>
+        </div>
+        <div class="form-group">
+          <label for="instructions">Delivery Instructions</label>
+          <textarea
+            id="instructions"
+            rows="3"
+            formControlName="instructions"
+            placeholder="Enter special delivery instructions"
+          ></textarea>
+        </div>
+      </form>
+    </div>
+
+    <div class="place-order">
+      <button
+        class="btn-place-order"
+        [disabled]="deliveryForm.invalid"
+        (click)="placeOrder()"
+      >
+        Place Order
+      </button>
+    </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="empty-cart">
+      <img src="assets/shopping.png" alt="Empty Cart" class="empty-cart-img" />
+      <p>Your cart is empty. Add some delicious food to the cart!</p>
+    </div>
+  </ng-template>
+</section>

@@ -1,0 +1,48 @@
+<div class="register-container">
+  <h2 class="register-title">Create Your Account</h2>
+  <form class="register-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        [(ngModel)]="name"
+        placeholder="Enter your name"
+        name="name"
+      />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        placeholder="Enter your email"
+        name="email"
+      />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        id="password"
+        [(ngModel)]="password"
+        placeholder="Enter your password"
+        name="password"
+      />
+    </div>
+    <div class="form-group">
+      <label for="confirm-password">Confirm Password</label>
+      <input
+        type="password"
+        id="confirm-password"
+        [(ngModel)]="confirmPassword"
+        placeholder="Confirm your password"
+        name="confirmPassword"
+      />
+    </div>
+    <div class="form-buttons">
+      <button type="button" class="btn-register" (click)="onRegister()">Register</button>
+    </div>
+  </form>
+</div>

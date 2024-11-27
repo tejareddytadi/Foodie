@@ -1,0 +1,16 @@
+<section class="orders-section">
+  <h2 class="section-title">Your Orders</h2>
+  <div *ngIf="orders.length === 0" class="no-orders">
+    <p>You have not placed any orders yet.</p>
+  </div>
+  <div *ngFor="let order of orders" class="order">
+    <h3>Order Placed on: {{ order.date }}</h3>
+    <ul class="order-items">
+      <li *ngFor="let item of order.items">
+        {{ item.name }} - {{ item.price | currency: 'INR' }}
+      </li>
+    </ul>
+    <p class="order-total">Total: {{ order.total | currency: 'INR' }}</p>
+    <hr />
+  </div>
+</section>

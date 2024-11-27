@@ -1,0 +1,20 @@
+<section id="menu" class="menu-section">
+  <h2 class="section-title">Our Menu</h2>
+  <div class="dish-container">
+    <div class="dish-card" *ngFor="let item of menuItems">
+      <img [src]="item.imageUrl" [alt]="item.name" class="dish-img" />
+      <h3>{{ item.name }}</h3>
+      <p class="price">Price: <span class="price-value">₹{{ item.price }}</span></p>
+      <p class="rating">
+        Rating:
+        <span class="rating-stars">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+            <i [class]="i < item.rating ? 'fa fa-star filled' : 'fa fa-star'"></i>
+          </ng-container>
+        </span>
+      </p>
+      <button class="btn-add-cart" (click)="addToCart(item)">Add to Cart</button>
+
+    </div>
+  </div>
+</section>
